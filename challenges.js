@@ -61,7 +61,13 @@ addTwoNumbers(0, 0) //=> 0
 addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
-
+function addTwoNumbers(num1, num2){
+  if(isNaN(num1) || isNaN(num2)){
+    return NaN;
+  }else{
+    return num1 + num2;
+  }
+}
 
 
 
@@ -86,7 +92,17 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
+function sumNumbers(nums){
+  return nums.reduce((accumulator, currentNum) => {
+    if(nums.length > 0){
+      return accumulator + currentNum
+    }else{
+      return 0
+    }
+  }, 0);
+}
 
+console.log(sumNumbers);
 
 
 
