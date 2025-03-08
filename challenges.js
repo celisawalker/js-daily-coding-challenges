@@ -192,8 +192,18 @@ range(1,1) //=> []
 range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------------------*/
 // Your solution for 06-range here:
+function range(num1, num2){
+  let result = [];
 
-
+  if(num2 < num1){
+    return "First argument must be less than second";
+  }else{
+    while(num1 < num2){
+      result.push(num1++);
+    }
+    return result;
+  }
+}
 
 
 
@@ -214,8 +224,12 @@ Examples:
 reverseUpcaseString("SEI Rocks!") //=> "!SKCOR IES" 
 -----------------------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
-
-
+function reverseUpcaseString(str){
+  let newStr = str.toUpperCase().split("");
+  let reversedStr = newStr.reverse()
+  let joinedStr = reversedStr.join("");
+  return joinedStr;
+}
 
 
 
@@ -236,7 +250,20 @@ removeEnds('SEB Rocks!') //=> "EB Rocks"
 removeEnds('a') //=> "" (empty string)
 -----------------------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
+// function removeEnds(str){
+//   let newStr = str.split("");
 
+//   for(let i = 0; i < newStr.length; i++){
+//     if(newStr.length <= 3){
+//       return "";
+//     }else{
+//       newStr.splice(0, 1);
+//       newStr.pop();
+//       let joinedNewStr = newStr.join("");
+//       return joinedNewStr;
+//     }
+//   }
+// }
 
 
 
