@@ -250,20 +250,18 @@ removeEnds('SEB Rocks!') //=> "EB Rocks"
 removeEnds('a') //=> "" (empty string)
 -----------------------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
-// function removeEnds(str){
-//   let newStr = str.split("");
+function removeEnds(str){
+  let newStr = str.split("");
 
-//   for(let i = 0; i < newStr.length; i++){
-//     if(newStr.length <= 3){
-//       return "";
-//     }else{
-//       newStr.splice(0, 1);
-//       newStr.pop();
-//       let joinedNewStr = newStr.join("");
-//       return joinedNewStr;
-//     }
-//   }
-// }
+    if(newStr.length < 3){
+      return "";
+    }else{
+      newStr.splice(0, 1);
+      newStr.pop();
+      let joinedNewStr = newStr.join("");
+      return joinedNewStr;
+    }
+  }
 
 
 
@@ -305,8 +303,21 @@ charCount('Today is fantastic!')
 }
 -----------------------------------------------------------------------------*/
 // Your solution for 09-charCount here:
+function charCount(str){
+  let obj = {};
+  
+  for(char of str){
+    if(obj[char]){
+      obj[char]++;
+    }else{
+      obj[char] = 1;
+    }
+    
+  }
+  return obj;
+}
 
-
+//console.log(charCount("hello"))
 
 
 
@@ -335,10 +346,20 @@ formatWithPadding(42, '*', 10) //=> "********42"
 formatWithPadding(1234, '*', 3) //=> "1234"
 -----------------------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
+function formatWithPadding(num1, str, num2){
+  let newNum1 = num1.toString();
 
 
 
-
+  if(newNum1.length >= num2){
+    return newNum1;
+  }else{
+    let paddingLength = num2 - newNum1.length;
+    let padding = str.repeat(paddingLength);
+    
+    return padding + newNum1; 
+  }
+}
 
 /*-----------------------------------------------------------------------------
 Challenge: 11-isPalindrome
