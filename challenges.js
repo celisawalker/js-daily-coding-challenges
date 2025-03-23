@@ -384,7 +384,18 @@ isPalindrome('A nut for a jar of tuna') //=> true
 isPalindrome('') //=> true
 -----------------------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
-
+function isPalindrome(str){
+  let newStr = str.toLowerCase().split(" ");
+  let joinedStr = newStr.join("");
+  let i = joinedStr.length - 1;
+  for(let j = 0; j < joinedStr.length; j++){
+    if(joinedStr[i] !== joinedStr[j]){
+      return false;
+    }
+    i--;
+  }
+  return true;
+}
 
 
 
